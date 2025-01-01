@@ -1,0 +1,97 @@
+plugins:
+  - jekyll-remote-theme
+  - jekyll-include-cache
+
+remote_theme: ucsb-cs-course-repos/course-repo-jekyll-theme
+
+url: https://ucsb-ccs-computing.github.io
+baseurl: "/W25-20C"
+
+course: "CMPTGCS 20C"
+qtr: "W25"
+instructor: "Richert Wang"
+quarter: "Winter 2025"
+piazza_url: 
+gauchospace_course_page:
+gradescope_class_url:
+
+github_url: https://github.com/ucsb-ccs-computing/W25-20C
+
+start_week: 1
+start_date: 2025-01-05 00:00:00.00-7:00
+num_weeks: 10
+extra_exam_week: true
+
+cal_dates: >                                                                    
+  [                                                                            
+    {"label":"W25 1st day of instruction", "date":"2024-01-08" },
+    {"label":"MLK Jr. Day", "date":"2025-01-20" },
+    {"label":"Presidents' Day", "date":"2025-02-17" },
+    {"label":"Pong Game Due", "date":"2024-01-27" },
+    {"label":"Educational Game Due", "date":"2025-02-19" },
+    {"label":"Group Project M1 Due", "date":"2025-02-16" },
+    {"label":"Group Project M2 Due", "date":"2025-03-02" },
+    {"label":"Group Project M3 Due", "date":"2025-03-12" },
+    {"label":"W25 instruction ends", "date":"2025-03-14" },
+    {"label":"Lightning Talk Due", "date":"2025-03-03" },                   
+    {"label":"W25 qtr ends", "date":"2025-03-21" }                        
+  ]
+
+kramdown:
+   parse_block_html: true
+   default_lang: cpp
+
+exclude:
+   - vendor
+   - _hwk/keep
+   - _lab/keep
+   - _exam/keep
+   - _lectures/keep
+   - _info/keep        
+include:
+   - _pages
+   
+timezone: America/Los_Angeles
+
+collections:
+  hwk:
+    output: true
+    permalink: /hwk/:path/
+    last_before: false
+  lectures:
+    output: true
+    permalink: /lectures/:path/
+  info:
+    output: true
+    permalink: /info/:path/
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: default
+  - 
+    scope:
+      path: ""
+      type: lectures
+    values:
+      layout: lecture
+  - 
+    scope:
+      path: ""
+      type: hwk
+    values:
+      layout: hwk
+  -
+    scope:
+      path: ""
+      type: info
+    values:
+      layout: default
+  -
+    scope:
+      path: "syllabus.md"
+      type: info
+    values:
+      layout: handout
